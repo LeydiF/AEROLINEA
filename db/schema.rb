@@ -42,12 +42,11 @@ ActiveRecord::Schema.define(version: 20160307213601) do
   end
 
   create_table "travels", force: :cascade do |t|
-    t.integer "airplane_id"
-    t.integer "passenger_id"
-    t.integer "route_id"
-
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "airplane_id"
+    t.integer  "passenger_id"
+    t.integer  "route_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

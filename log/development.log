@@ -569,3 +569,657 @@ Migrating to CreateTravels (20160307213601)
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/passengers/new" for 127.0.0.1 at 2016-03-07 17:04:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PassengersController#new as HTML
+  Rendered passengers/_form.html.erb (28.2ms)
+  Rendered passengers/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 297ms (Views: 265.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:04:38 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j7B2wnf2w1EZR73y0gh+SSdh2mS0+Mw+YDYAnzhO6eQW9qxnx5FB1AHFlNB4ckRVhlOU/Ud5q6mWLVyCG36/nQ==", "passenger"=>{"nombre"=>"", "apellido"=>"", "identificacion"=>"111111111111111111", "vuelo"=>""}, "commit"=>"Create Passenger"}
+  [1m[35m (4.5ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered passengers/_form.html.erb (2.6ms)
+  Rendered passengers/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 47ms (Views: 39.4ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:05:40 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N3vdBhp87rcsWOIOaFxUi3wuB1W+uPgKPHAmPv7msMauPQejqhtsMjTayyzCJm6X3RxJzE05n53Ka3oj3dbmvw==", "passenger"=>{"nombre"=>"Luisa", "apellido"=>"Martinez", "identificacion"=>"112545877963", "vuelo"=>"New York - Bogota"}, "commit"=>"Create Passenger"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered passengers/_form.html.erb (4.3ms)
+  Rendered passengers/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:05:45 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xj4cUI1q2Brkg8XD5O/9lBvQQEMzVQcOOw0L2/p/HptfeMb1PQ1an/wB7OFOlceIuuIO2sDUYJnNFlfG2U9I4g==", "passenger"=>{"nombre"=>"Luisa", "apellido"=>"Martinez", "identificacion"=>"112545877963", "vuelo"=>"New York - Bogota"}, "commit"=>"Create Passenger"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered passengers/_form.html.erb (3.0ms)
+  Rendered passengers/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:06:16 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+bItNIGx0w69lDV7koty6SChTRd0YMwInX6fB0s/PlRg9PeRMdZRi6UWHFk48Uj1gZMDjofhq59rZcMaaA9oLQ==", "passenger"=>{"nombre"=>"Luisa", "apellido"=>"Martinez", "identificacion"=>"1451258779", "vuelo"=>"New York - Bogota"}, "commit"=>"Create Passenger"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.7ms)[0m  [1mINSERT INTO "passengers" ("nombre", "apellido", "identificacion", "vuelo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nombre", "Luisa"], ["apellido", "Martinez"], ["identificacion", 1451258779], ["vuelo", "New York - Bogota"], ["created_at", "2016-03-07 22:06:16.685032"], ["updated_at", "2016-03-07 22:06:16.685032"]]
+  [1m[35m (12.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/passengers/2
+Completed 302 Found in 26ms (ActiveRecord: 17.4ms)
+
+
+Started GET "/passengers/2" for 127.0.0.1 at 2016-03-07 17:06:16 -0500
+Processing by PassengersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1mSELECT  "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered passengers/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 53ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:07:25 -0500
+Processing by PassengersController#index as HTML
+  [1m[35mPassenger Load (0.3ms)[0m  SELECT "passengers".* FROM "passengers"
+  Rendered passengers/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 81ms (Views: 70.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/passengers/new" for 127.0.0.1 at 2016-03-07 17:07:28 -0500
+Processing by PassengersController#new as HTML
+  Rendered passengers/_form.html.erb (2.5ms)
+  Rendered passengers/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:07:59 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+EBdIeQbQJ2INlpcYGrn8YvRyksLOy5rCaOIkSWLFiyp9vRN/fvh26i8Evb+5GDZx0JsN+tiy5aPdI/Z6Z6IQ==", "passenger"=>{"nombre"=>"p", "apellido"=>"l", "identificacion"=>"11", "vuelo"=>"Barranquilla - Miami"}, "commit"=>"Create Passenger"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `name' for #<Passenger:0xb52d39fc>):
+  app/controllers/passengers_controller.rb:30:in `block in create'
+  app/controllers/passengers_controller.rb:29:in `create'
+
+
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.8ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (10.0ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (81.8ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:08:24 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+EBdIeQbQJ2INlpcYGrn8YvRyksLOy5rCaOIkSWLFiyp9vRN/fvh26i8Evb+5GDZx0JsN+tiy5aPdI/Z6Z6IQ==", "passenger"=>{"nombre"=>"p", "apellido"=>"l", "identificacion"=>"11", "vuelo"=>"Barranquilla - Miami"}, "commit"=>"Create Passenger"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered passengers/_form.html.erb (15.5ms)
+  Rendered passengers/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 76ms (Views: 52.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:09:11 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ybVLHUy6HbF2ZaaGF+Zu8fDkwbioN3JIzkHSP80rGMJQ85G4/N2fNG7nj6S9nFTtUdaPIVu2Fd84Wo4i7htOuw==", "passenger"=>{"nombre"=>"Juan", "apellido"=>"Lopera", "identificacion"=>"1112458795", "vuelo"=>"Barranquilla - Miami"}, "commit"=>"Create Passenger"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "passengers" ("nombre", "apellido", "identificacion", "vuelo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nombre", "Juan"], ["apellido", "Lopera"], ["identificacion", 1112458795], ["vuelo", "Barranquilla - Miami"], ["created_at", "2016-03-07 22:09:11.751694"], ["updated_at", "2016-03-07 22:09:11.751694"]]
+  [1m[36m (74.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/passengers/3
+Completed 302 Found in 83ms (ActiveRecord: 77.3ms)
+
+
+Started GET "/passengers/3" for 127.0.0.1 at 2016-03-07 17:09:11 -0500
+Processing by PassengersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPassenger Load (0.2ms)[0m  SELECT  "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered passengers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:09:16 -0500
+Processing by PassengersController#index as HTML
+  [1m[36mPassenger Load (0.2ms)[0m  [1mSELECT "passengers".* FROM "passengers"[0m
+  Rendered passengers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddEmailToPassengers (20160307221601)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "passengers" ADD "email" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160307221601"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:16:51 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by PassengersController#index as HTML
+  [1m[36mPassenger Load (0.2ms)[0m  [1mSELECT "passengers".* FROM "passengers"[0m
+  Rendered passengers/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 60ms (Views: 52.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/airplanes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:51 -0500
+
+
+Started GET "/assets/passengers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:51 -0500
+
+
+Started GET "/assets/routes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:51 -0500
+
+
+Started GET "/assets/ruta.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:51 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/scaffolds.self-d30ec9175c20a15b4b522d91beb1fee269fb6016bccadd676d026d95e1afde9b.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/airplanes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/passengers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/routes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/ruta.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:52 -0500
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+Processing by PassengersController#index as HTML
+  [1m[35mPassenger Load (0.2ms)[0m  SELECT "passengers".* FROM "passengers"
+  Rendered passengers/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/airplanes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/passengers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/routes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/ruta.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/scaffolds.self-d30ec9175c20a15b4b522d91beb1fee269fb6016bccadd676d026d95e1afde9b.css?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/airplanes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/passengers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/ruta.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/routes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-07 17:16:53 -0500
+
+
+Started GET "/passengers/new" for 127.0.0.1 at 2016-03-07 17:22:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PassengersController#new as HTML
+  Rendered passengers/_form.html.erb (6.3ms)
+  Rendered passengers/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 66ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:22:32 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"414G40svoWA11Dmac0NLEglqQjes4hKV3+tgicnR8kF6GNxG+0gj5S1WELjZOXEOqFgMrl9jdQIp8DyU6uGkOA==", "passenger"=>{"nombre"=>"l", "apellido"=>"p", "identificacion"=>"15", "vuelo"=>""}, "commit"=>"Create Passenger"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered passengers/_form.html.erb (9.3ms)
+  Rendered passengers/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRoutes (20160307194609)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "vuelo" varchar, "distancia" varchar, "hora" float, "codigo" integer, "precio" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160307194609"]]
+  [1m[35m (4.2ms)[0m  commit transaction
+Migrating to CreateAirplanes (20160307195830)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "airplanes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "empresa" varchar, "piloto" varchar, "vuelo" varchar, "numero" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160307195830"]]
+  [1m[35m (12.7ms)[0m  commit transaction
+Migrating to CreatePassengers (20160307210413)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "passengers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "apellido" varchar, "identificacion" integer, "vuelo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160307210413"]]
+  [1m[35m (13.6ms)[0m  commit transaction
+Migrating to CreateTravels (20160307213601)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "travels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "airplane_id" integer, "passenger_id" integer, "route_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160307213601"]]
+  [1m[35m (12.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:31:44 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ahjJy437K/0taYsOGR4nvDtJeUPtQm2IdAbE3E2SZ9A7rmCnlBuKuw3jw6SHkKCUd9rfPw0biHXy0cOUgYf5g==", "passenger"=>{"nombre"=>"", "apellido"=>"", "identificacion"=>"", "vuelo"=>""}, "commit"=>"Create Passenger"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered passengers/_form.html.erb (9.0ms)
+  Rendered passengers/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 69ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:31:45 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7cwZKSHsDKgcyTgFdCobStFJD0gfMCxGIwHXfrGdcHB0isOMkYuOLQRLESfeUCFWcHtB0eyxS9HVGotjkq0mCQ==", "passenger"=>{"nombre"=>"", "apellido"=>"", "identificacion"=>"", "vuelo"=>""}, "commit"=>"Create Passenger"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered passengers/_form.html.erb (8.5ms)
+  Rendered passengers/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 47ms (Views: 40.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:31:48 -0500
+Processing by PassengersController#index as HTML
+  [1m[35mPassenger Load (0.1ms)[0m  SELECT "passengers".* FROM "passengers"
+  Rendered passengers/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 57ms (Views: 56.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2016-03-07 17:33:31 -0500
+Processing by AirplanesController#index as HTML
+  [1m[36mAirplane Load (0.3ms)[0m  [1mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 51ms (Views: 43.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/route4s" for 127.0.0.1 at 2016-03-07 17:33:40 -0500
+
+ActionController::RoutingError (No route matches [GET] "/route4s"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/leydi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/leydi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/leydi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.8ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (5.1ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (5.1ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.9ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (74.9ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2016-03-07 17:33:43 -0500
+Processing by RoutesController#index as HTML
+  [1m[35mRoute Load (0.1ms)[0m  SELECT "routes".* FROM "routes"
+  Rendered routes/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 60ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:34:00 -0500
+Processing by PassengersController#index as HTML
+  [1m[36mPassenger Load (0.2ms)[0m  [1mSELECT "passengers".* FROM "passengers"[0m
+  Rendered passengers/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 44.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/passengers/new" for 127.0.0.1 at 2016-03-07 17:35:11 -0500
+Processing by PassengersController#new as HTML
+  Rendered passengers/_form.html.erb (2.0ms)
+  Rendered passengers/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 63ms (Views: 58.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:35:36 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ZSm58+mP1yIY35NHL9v1WauCtt5jSfX/pwbkhIvHNN40nxCf8G92ZDhV2+2xVXJx5xEQooMQEAIh0ePMR9Kqg==", "passenger"=>{"nombre"=>"Leydi", "apellido"=>"Florez", "identificacion"=>"1017188791", "vuelo"=>"Bogota - New York"}, "commit"=>"Create Passenger"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "passengers" ("nombre", "apellido", "identificacion", "vuelo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nombre", "Leydi"], ["apellido", "Florez"], ["identificacion", 1017188791], ["vuelo", "Bogota - New York"], ["created_at", "2016-03-07 22:35:36.638391"], ["updated_at", "2016-03-07 22:35:36.638391"]]
+  [1m[35m (40.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/passengers/1
+Completed 302 Found in 46ms (ActiveRecord: 41.7ms)
+
+
+Started GET "/passengers/1" for 127.0.0.1 at 2016-03-07 17:35:36 -0500
+Processing by PassengersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1mSELECT  "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered passengers/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 51ms (Views: 45.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:35:39 -0500
+Processing by PassengersController#index as HTML
+  [1m[35mPassenger Load (0.1ms)[0m  SELECT "passengers".* FROM "passengers"
+  Rendered passengers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/passengers/new" for 127.0.0.1 at 2016-03-07 17:35:41 -0500
+Processing by PassengersController#new as HTML
+  Rendered passengers/_form.html.erb (2.1ms)
+  Rendered passengers/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/passengers" for 127.0.0.1 at 2016-03-07 17:36:02 -0500
+Processing by PassengersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7P0vjkgTONTO71y+uGejaOxx46XQ8uDzY4eKmnRfee11u/Ur+HS6UdZtdZwSHZl0TUOtPCNzh2SVnNaHV28vlA==", "passenger"=>{"nombre"=>"Luisa", "apellido"=>"Lopera", "identificacion"=>"1245789632", "vuelo"=>"New York - Bogota"}, "commit"=>"Create Passenger"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "passengers" ("nombre", "apellido", "identificacion", "vuelo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nombre", "Luisa"], ["apellido", "Lopera"], ["identificacion", 1245789632], ["vuelo", "New York - Bogota"], ["created_at", "2016-03-07 22:36:02.399448"], ["updated_at", "2016-03-07 22:36:02.399448"]]
+  [1m[36m (39.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/passengers/2
+Completed 302 Found in 45ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/passengers/2" for 127.0.0.1 at 2016-03-07 17:36:02 -0500
+Processing by PassengersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPassenger Load (0.1ms)[0m  SELECT  "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered passengers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/passengers" for 127.0.0.1 at 2016-03-07 17:36:04 -0500
+Processing by PassengersController#index as HTML
+  [1m[36mPassenger Load (0.2ms)[0m  [1mSELECT "passengers".* FROM "passengers"[0m
+  Rendered passengers/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2016-03-07 17:36:16 -0500
+Processing by RoutesController#index as HTML
+  [1m[35mRoute Load (0.1ms)[0m  SELECT "routes".* FROM "routes"
+  Rendered routes/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/new" for 127.0.0.1 at 2016-03-07 17:36:18 -0500
+Processing by RoutesController#new as HTML
+  Rendered routes/_form.html.erb (13.3ms)
+  Rendered routes/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 80ms (Views: 65.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/routes" for 127.0.0.1 at 2016-03-07 17:36:48 -0500
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F4C4eXHk2loTY/sQ2ZQnddYFnggQO8HBif9cp8hOTwCOxmLcwYNY3wvh0jJz7h1pdzfQkeO6plZ/5AC6634ZeQ==", "route"=>{"vuelo"=>"Bogota - New york", "distancia"=>"125 km", "hora"=>"8:00 am", "codigo"=>"1", "precio"=>"200000"}, "commit"=>"Create Route"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRoute Exists (0.1ms)[0m  SELECT  1 AS one FROM "routes" WHERE "routes"."codigo" = 1 LIMIT 1
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "routes" ("vuelo", "distancia", "hora", "codigo", "precio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["vuelo", "Bogota - New york"], ["distancia", "125 km"], ["hora", 8.0], ["codigo", 1], ["precio", 200000], ["created_at", "2016-03-07 22:36:48.103887"], ["updated_at", "2016-03-07 22:36:48.103887"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/routes/1
+Completed 302 Found in 35ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/routes/1" for 127.0.0.1 at 2016-03-07 17:36:48 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered routes/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2016-03-07 17:36:50 -0500
+Processing by RoutesController#index as HTML
+  [1m[35mRoute Load (0.2ms)[0m  SELECT "routes".* FROM "routes"
+  Rendered routes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/new" for 127.0.0.1 at 2016-03-07 17:36:53 -0500
+Processing by RoutesController#new as HTML
+  Rendered routes/_form.html.erb (2.4ms)
+  Rendered routes/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 87ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/routes" for 127.0.0.1 at 2016-03-07 17:37:31 -0500
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7kdpS/RoaT1aRvVhgQ/3AvAL5bnCdvrHd9ssogbg4Ex3AbPuRA/ruELE3EMrdc0eUTmrIDH3nVCBwHC/JdC2NQ==", "route"=>{"vuelo"=>"New York - Bogota", "distancia"=>"125 km", "hora"=>" 10:00 am", "codigo"=>"1", "precio"=>"200000"}, "commit"=>"Create Route"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRoute Exists (0.1ms)[0m  SELECT  1 AS one FROM "routes" WHERE "routes"."codigo" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered routes/_form.html.erb (7.8ms)
+  Rendered routes/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 76ms (Views: 66.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/routes" for 127.0.0.1 at 2016-03-07 17:37:42 -0500
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h8u32BRhb/FAwzSXnjvgIcXGZW3u31BIZoRNPEVq9RcejW19pAbtdFhBHbU0Qdo9ZPQr9B1eN9+QnxEhZlqjbg==", "route"=>{"vuelo"=>"New York - Bogota", "distancia"=>"125 km", "hora"=>" 10:00 am", "codigo"=>"2", "precio"=>"200000"}, "commit"=>"Create Route"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRoute Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "routes" WHERE "routes"."codigo" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "routes" ("vuelo", "distancia", "hora", "codigo", "precio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["vuelo", "New York - Bogota"], ["distancia", "125 km"], ["hora", 10.0], ["codigo", 2], ["precio", 200000], ["created_at", "2016-03-07 22:37:42.214807"], ["updated_at", "2016-03-07 22:37:42.214807"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/routes/2
+Completed 302 Found in 18ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/routes/2" for 127.0.0.1 at 2016-03-07 17:37:42 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRoute Load (0.1ms)[0m  SELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered routes/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2016-03-07 17:37:45 -0500
+Processing by RoutesController#index as HTML
+  [1m[36mRoute Load (0.2ms)[0m  [1mSELECT "routes".* FROM "routes"[0m
+  Rendered routes/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 74ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplane" for 127.0.0.1 at 2016-03-07 17:37:55 -0500
+
+ActionController::RoutingError (No route matches [GET] "/airplane"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/leydi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/leydi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/leydi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.6ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.2ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.3ms)
+  Rendered /home/leydi/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.4ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2016-03-07 17:37:58 -0500
+Processing by AirplanesController#index as HTML
+  [1m[35mAirplane Load (0.1ms)[0m  SELECT "airplanes".* FROM "airplanes"
+  Rendered airplanes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/airplanes/new" for 127.0.0.1 at 2016-03-07 17:37:59 -0500
+Processing by AirplanesController#new as HTML
+  Rendered airplanes/_form.html.erb (9.7ms)
+  Rendered airplanes/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 66ms (Views: 61.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/airplanes" for 127.0.0.1 at 2016-03-07 17:38:20 -0500
+Processing by AirplanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hyzuDa2GwyldCMM/FO2iC19QGgLk+/gC/Ahsks1n1rYeajSoHeFBrEWK6h2+l5gX/mJUmxd6n5UKEzCP7leAzw==", "airplane"=>{"empresa"=>"Avianca", "piloto"=>"Juan", "vuelo"=>"Bogota - New York", "numero"=>"1"}, "commit"=>"Create Airplane"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAirplane Exists (0.1ms)[0m  SELECT  1 AS one FROM "airplanes" WHERE "airplanes"."numero" = '1' LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "airplanes" ("empresa", "piloto", "vuelo", "numero", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["empresa", "Avianca"], ["piloto", "Juan"], ["vuelo", "Bogota - New York"], ["numero", "1"], ["created_at", "2016-03-07 22:38:20.262781"], ["updated_at", "2016-03-07 22:38:20.262781"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/airplanes/1
+Completed 302 Found in 20ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/airplanes/1" for 127.0.0.1 at 2016-03-07 17:38:20 -0500
+Processing by AirplanesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered airplanes/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 54ms (Views: 49.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2016-03-07 17:38:24 -0500
+Processing by AirplanesController#index as HTML
+  [1m[35mAirplane Load (0.2ms)[0m  SELECT "airplanes".* FROM "airplanes"
+  Rendered airplanes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/new" for 127.0.0.1 at 2016-03-07 17:38:26 -0500
+Processing by AirplanesController#new as HTML
+  Rendered airplanes/_form.html.erb (2.0ms)
+  Rendered airplanes/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/airplanes" for 127.0.0.1 at 2016-03-07 17:38:57 -0500
+Processing by AirplanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8UBvpSDtuP52B1Og7v1Z0HzR1m+eAARWNAZ+HGdw1IJoBrUAkIo6e26FeoJEh2PM3eOY9m2BY8HCHSIBRECC+w==", "airplane"=>{"empresa"=>"Viva Colombia", "piloto"=>"Andres", "vuelo"=>"New York - Bogota", "numero"=>"1"}, "commit"=>"Create Airplane"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAirplane Exists (0.1ms)[0m  SELECT  1 AS one FROM "airplanes" WHERE "airplanes"."numero" = '1' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered airplanes/_form.html.erb (25.2ms)
+  Rendered airplanes/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 78ms (Views: 67.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/airplanes" for 127.0.0.1 at 2016-03-07 17:39:03 -0500
+Processing by AirplanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMlS9Dw3Ll+gL4dgqKB+te/cw047EyadxUet6vP7Jemxj4hRjFCs2ritrkIC2kSpTu6N18iSQQozXPH30MtzkA==", "airplane"=>{"empresa"=>"Viva Colombia", "piloto"=>"Andres", "vuelo"=>"New York - Bogota", "numero"=>"2"}, "commit"=>"Create Airplane"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAirplane Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "airplanes" WHERE "airplanes"."numero" = '2' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "airplanes" ("empresa", "piloto", "vuelo", "numero", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["empresa", "Viva Colombia"], ["piloto", "Andres"], ["vuelo", "New York - Bogota"], ["numero", "2"], ["created_at", "2016-03-07 22:39:03.643286"], ["updated_at", "2016-03-07 22:39:03.643286"]]
+  [1m[36m (16.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/airplanes/2
+Completed 302 Found in 24ms (ActiveRecord: 18.4ms)
+
+
+Started GET "/airplanes/2" for 127.0.0.1 at 2016-03-07 17:39:03 -0500
+Processing by AirplanesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAirplane Load (0.1ms)[0m  SELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered airplanes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2016-03-07 17:39:06 -0500
+Processing by AirplanesController#index as HTML
+  [1m[36mAirplane Load (0.1ms)[0m  [1mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.1ms)
