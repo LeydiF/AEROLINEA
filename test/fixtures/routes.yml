@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vuelo: MyString
+  distancia: MyString
+  hora: 1.5
+  codigo: 1
+  precio: 1
+
+two:
+  vuelo: MyString
+  distancia: MyString
+  hora: 1.5
+  codigo: 1
+  precio: 1
