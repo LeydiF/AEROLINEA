@@ -23,10 +23,21 @@
     <%= f.label :identificacion %><br>
     <%= f.number_field :identificacion %>
   </div>
-  <div class="field">
+
+  <%= f.select :vuelo, Route.all.map{|r| [r.vuelo, r.vuelo]}%>
+<!--   <div class="field">
     <%= f.label :vuelo %><br>
     <%= f.text_field :vuelo %>
-  </div>
+  </div> -->
+  <div class="field">
+  <p>Seleccione un vuelo: </p>
+<!--   <% Route.all.each do |vuelo1|%> 
+
+    <%= check_box_tag "vuelo[]", vuelo1.id %>
+    <%= vuelo1.vuelo %><br> 
+  <% end %> -->
+</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
