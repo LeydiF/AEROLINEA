@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20160309193728) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "passengers_routes", id: false, force: :cascade do |t|
+    t.integer "route_id"
+    t.integer "passenger_id"
+  end
+
   create_table "routes", force: :cascade do |t|
     t.string   "vuelo"
     t.string   "distancia"
@@ -39,11 +44,6 @@ ActiveRecord::Schema.define(version: 20160309193728) do
     t.integer  "precio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "routes_passengers", id: false, force: :cascade do |t|
-    t.integer "route_id"
-    t.integer "passenger_id"
   end
 
   create_table "travels", force: :cascade do |t|
