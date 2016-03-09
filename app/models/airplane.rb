@@ -1,6 +1,5 @@
 class Airplane < ActiveRecord::Base
-	has_many :passengers
-	has_many :routes, :through => :passengers
+	has_many :flights
 
 	validates :numero, uniqueness: true
 end
