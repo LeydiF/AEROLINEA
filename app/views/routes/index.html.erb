@@ -24,6 +24,7 @@
         <td><%= route.precio %></td>
         <td><%= link_to 'Show', route %></td>
         <td><%= link_to 'Edit', edit_route_path(route) %></td>
+        <td><%= link_to 'buy', buy_ticket_path(route: route.id, id: 1) %></td>
         <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

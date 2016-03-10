@@ -1,5 +1,5 @@
 class PassengersController < ApplicationController
-  before_action :set_passenger, only: [:show, :edit, :update, :destroy]
+  before_action :set_passenger, only: [:show, :edit, :update, :destroy, :buy_ticket]
 
   # GET /passengers
   # GET /passengers.json
@@ -10,6 +10,14 @@ class PassengersController < ApplicationController
   # GET /passengers/1
   # GET /passengers/1.json
   def show
+  end
+
+def buy_ticket
+    @route= Route.find(params[:route])
+    @passenger.routes << @route
+    @passenger.save
+    redirect_to routes_path, notice: 'Tiquete Comprado' 
+
   end
 
   # GET /passengers/new
